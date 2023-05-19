@@ -21,7 +21,7 @@ struct ContentView: View {
                 .padding() // 内側に余白を付けています
             Spacer()
             Button {
-                print("ボタンが押されたよ")
+                print("ボタンが押された")
                 isRolling = true
                 timer = Timer.scheduledTimer(withTimeInterval:0.1, repeats:true) {_ in
                     randomNumber = Int.random(in: 1...6)
@@ -45,7 +45,7 @@ struct ContentView: View {
     }
     
     func playDice() {
-        print("ボタンが押されたよ")
+        print("ボタンが押された")
         isRolling = true
 //        timer = Timer.scheduledTimer(timeInterval: 0.1, target: <#T##Any#>, selector: <#T##Selector#>, userInfo: <#T##Any?#>, repeats: <#T##Bool#>)
     }
