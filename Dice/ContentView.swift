@@ -22,10 +22,15 @@ struct ContentView: View {
             Spacer()
             Button {
                 print("ボタンが押されたよ")
+                isRolling = true
                 timer = Timer.scheduledTimer(withTimeInterval:0.1, repeats:true) {_ in
                     randomNumber = Int.random(in: 1...6)
                 }
-                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    timer?.invalidate()
+                    timer = nil
+                    isRolling = false
+                }
             } label: {
                 Text("サイコロをふる")
                     .padding()
